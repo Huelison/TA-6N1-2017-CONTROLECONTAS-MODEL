@@ -65,6 +65,7 @@ public class Movimento implements Serializable {
     private String tipo;//armazena o tipo de movimentação
 
     @ManyToOne
+    @NotNull(message = "A pessoa deve ser informada")
     @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_pessoa"))
     private Pessoa pessoa;
 
